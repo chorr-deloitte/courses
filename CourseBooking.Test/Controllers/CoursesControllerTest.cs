@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using CourseBooking.Controllers;
 using CourseBooking.DataAccess;
@@ -17,8 +17,8 @@ namespace CourseBooking.Test.Controllers {
         [TestMethod]
         public void IndexAction_ReturnsAllCourses() {
             var result = controller.Index() as ViewResult;
-            var courses = (IQueryable<TrainingCourse>) result.ViewData.Model;
-            Assert.AreEqual(7, courses.Count());
+            var courses = (IList<TrainingCourse>) result.ViewData.Model;
+            Assert.AreEqual(7, courses.Count);
         }
 
         [TestMethod]
@@ -38,10 +38,10 @@ namespace CourseBooking.Test.Controllers {
         [TestMethod]
         public void ByKeyword_ReturnsValidCourses() {
             var result = controller.ByKeyword("Intro") as ViewResult;
-            var courses = (IQueryable<TrainingCourse>) result.ViewData.Model;
+            var courses = (IList<TrainingCourse>) result.ViewData.Model;
             var keyword = (string) result.ViewData["keyword"];
             Assert.AreEqual("Intro", keyword);
-            Assert.AreEqual(4, courses.Count());
+            Assert.AreEqual(4, courses.Count);
         }
 
         [TestMethod]
