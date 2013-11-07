@@ -1,0 +1,23 @@
+﻿@model IList<CourseBooking.Models.TrainingCourse>
+
+@{
+    ViewBag.Title = "Our Course Catalog";
+}
+
+<h1>The Complete Course Catalog</h1>
+<table>
+    <thead>
+        <tr><th>Number</th><th>Title</th><th>Type</th></tr>
+    </thead>
+    <tbody>    
+    @foreach(var course in ViewData.Model) {
+            <tr>
+                <td>
+                    @Html.ActionLink(course.Number, "Show", "Courses", new { number = course.Number }, new { })
+                </td>
+                <td>@course.Title</td>
+                <td>@course.Type</td>
+            </tr>
+     }
+    </tbody>
+</table>

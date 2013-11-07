@@ -1,0 +1,23 @@
+﻿@model IQueryable<CourseBooking.Models.TrainingCourse>
+
+@{
+    ViewBag.Title = "Results of 'Search By Keyword'";
+}
+
+<h1>Courses Containing the Keyword <em>@ViewData["keyword"]</em></h1>
+<table>
+    <thead>
+        <tr><th>Number</th><th>Title</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model) {
+            <tr>
+                <td>
+                    @Html.ActionLink(course.Number, "Show", "Courses", new { number = course.Number }, new { })
+                </td>
+                <td>@course.Title</td>
+                <td>@course.Type</td>
+            </tr>
+        }
+    </tbody>
+</table>

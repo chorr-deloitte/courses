@@ -1,0 +1,23 @@
+﻿@model CourseBooking.Models.TrainingCourse
+
+@{
+    ViewBag.Title = "The course you created";
+    var course = Model;
+}
+<h1>Details of the course you have created</h1>
+<table>
+    <tbody>
+        <tr>
+            <th>Number</th>
+            <td>@course.Number</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>@course.Title</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>@course.Type</td>
+        </tr>
+    </tbody>
+</table>

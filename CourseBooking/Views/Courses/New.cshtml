@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "New course";
+}
+
+<h1>Enter the details of the new course below</h1>
+@using(Html.BeginForm()) {
+    <table>
+        <tr>
+            <th>Number</th>
+            <td>@Html.TextBox("Number")</td>
+            <td>@Html.ValidationMessage("Number")</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>@Html.TextBox("Title")</td>
+            <td>@Html.ValidationMessage("Title")</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>@Html.TextBox("Type")</td>
+            <td>@Html.ValidationMessage("Type")</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="submit" value="Add Course"/>
+            </td>
+        </tr>
+    </table>
+}

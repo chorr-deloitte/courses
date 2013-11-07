@@ -1,0 +1,23 @@
+﻿@model CourseBooking.Models.TrainingCourse
+
+@{
+    var course = Model;
+    ViewBag.Title = String.Format("Course {0}: {1}", course.Number, course.Title);
+}
+<h1>Details of the Course You Selected </h1>
+<table>
+    <tbody>
+        <tr>
+            <th>Number</th>
+            <td>@course.Number</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>@course.Title</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>@course.Type</td>
+        </tr>
+    </tbody>
+</table>
