@@ -6,39 +6,35 @@
                 <h2>@ViewBag.Message</h2>
             </hgroup>
             <p>
-                This is a demonstration application which you can reverse engineer and 
-                then extend...
+                Providing high quality training in a wide range of software and developer tools
             </p>
         </div>
     </section>
 }
-<h3>Please select one of the following:</h3>
 
+<article>
 <ol class="round">
     <li class="one">
-        <h5><a href="@Url.Action("Index", "Courses")">View the course catalog</a></h5>
-        <p>If it aint there we'll write it :-)</p>
+        <h5><a href="@Url.Action("Index", "Courses")">View all courses</a></h5><br />
+        
     </li>
     <li class="two">
-        <h5>Search for a course by number</h5>
+        <h5>Search for a course</h5>
         <form action="@Url.Action("ByNumber", "Courses")" method="get">
-            <input type="text" name="number" maxlength="4" value="AB12"/>
+           <input type="text" name="number" maxlength="4" value="AB12"/>
             <input type="submit" value="Search"/>
         </form>
     </li>
-    <li class="three">
-        <h5>Search for a course by keyword</h5>
-        <form action="@Url.Action("ByKeyword", "Courses")" method="get">
-            <input type="text" name="keyword" maxlength="10" value="Intro" />
-            <input type="submit" value="Search" />
-        </form>
-    </li>
-    <li class="four">
-        <h5><a href="@Url.Action("New", "Courses")">Add a new course</a></h5>
-        <p>We build to your requirements...</p>
-    </li>
-    <li class="five">
-        <h5>Working with deliveries</h5>
-        <p>Your code goes here...</p>
-    </li>
+
 </ol>
+</article>
+
+
+<aside>
+    <h2>What others have to say</h2>
+    <img src="../Images/dictionary.jpg" class="image" />
+    <p>"The quality of the materials made the course content very easy to follow."</p> <br />
+    <p>"The instructors are always willing to answer questions."</p> <br />
+    <p>"I would recommend Suineg to others."</p>
+
+</aside>
